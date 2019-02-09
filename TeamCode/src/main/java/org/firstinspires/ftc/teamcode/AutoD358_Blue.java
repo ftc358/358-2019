@@ -1,7 +1,10 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+
 import static java.lang.Math.sqrt;
 
+@Autonomous
 public class AutoD358_Blue extends AutoEngine358 {
     private double POWER = 1;
     private boolean done = false;
