@@ -21,7 +21,7 @@ public class Pathfinder {
         int GOAL_X = goalX + 38;
         int GOAL_Y = 38 - goalY;
 
-        SimpleMap map = new SimpleMap();
+        PlayingFieldMap map = new PlayingFieldMap();
         AStarPathFinder pathFinder = new AStarPathFinder(map, MAX_PATH_LENGTH, true);
         List<RobotPosition> pathFound = new ArrayList<>();
 
@@ -43,7 +43,7 @@ public class Pathfinder {
 
 }
 
-class SimpleMap implements TileBasedMap {
+class PlayingFieldMap implements TileBasedMap {
     private static final int WIDTH = 77;
     private static final int HEIGHT = 77;
 
