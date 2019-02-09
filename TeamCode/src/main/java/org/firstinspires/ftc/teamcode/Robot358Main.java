@@ -198,9 +198,6 @@ public abstract class Robot358Main extends LinearOpMode {
     }
 
     public void forward(double power, double distance) {
-
-        runUsingEncoders();
-
         //Distance is in inches
 
         int ticks = (int) (((distance / (4 * Math.PI) * 1120)) * 4 / 3 + 0.5);
@@ -241,8 +238,6 @@ public abstract class Robot358Main extends LinearOpMode {
     }
 
     public void strafe(double power, double distance) {
-
-        runUsingEncoders();
 
         int ticks = (int) (distance * 133);
 
