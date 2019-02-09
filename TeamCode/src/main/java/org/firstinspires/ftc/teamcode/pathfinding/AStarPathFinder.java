@@ -1,6 +1,4 @@
-package org.firstinspires.ftc.teamcode.Team358.pathfinding;
-
-import org.firstinspires.ftc.teamcode.Team358.pathfinding.heuristics.ClosestHeuristic;
+package org.firstinspires.ftc.teamcode.pathfinding;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

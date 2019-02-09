@@ -1,8 +1,8 @@
-package org.firstinspires.ftc.teamcode.Team358.pathfinding.heuristics;
+package org.firstinspires.ftc.teamcode.pathfinding.heuristics;
 
-import org.firstinspires.ftc.teamcode.Team358.pathfinding.AStarHeuristic;
-import org.firstinspires.ftc.teamcode.Team358.pathfinding.Mover;
-import org.firstinspires.ftc.teamcode.Team358.pathfinding.TileBasedMap;
+import org.firstinspires.ftc.teamcode.pathfinding.AStarHeuristic;
+import org.firstinspires.ftc.teamcode.pathfinding.Mover;
+import org.firstinspires.ftc.teamcode.pathfinding.TileBasedMap;
 
 /**
  * A heuristic that uses the tile that is closest to the target

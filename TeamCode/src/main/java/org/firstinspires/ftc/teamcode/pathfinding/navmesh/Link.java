@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.Team358.pathfinding.navmesh;
+package org.firstinspires.ftc.teamcode.pathfinding.navmesh;
 
 /**
  * A link between this space and another

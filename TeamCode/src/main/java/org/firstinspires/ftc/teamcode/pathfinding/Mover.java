@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.Team358.pathfinding;
+package org.firstinspires.ftc.teamcode.pathfinding;
 
 /**
  * A tagging interface for an object representing the entity in the game that

@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.Team358.pathfinding;
+package org.firstinspires.ftc.teamcode.pathfinding;
 
 /**
  * The context describing the current path finding state

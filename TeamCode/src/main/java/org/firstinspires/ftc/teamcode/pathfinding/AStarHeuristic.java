@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.Team358.pathfinding;
+package org.firstinspires.ftc.teamcode.pathfinding;
 
 /**
  * The description of a class providing a cost for a given tile based

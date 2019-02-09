@@ -1,8 +1,8 @@
-package org.firstinspires.ftc.teamcode.Team358.pathfinding.navmesh;
+package org.firstinspires.ftc.teamcode.pathfinding.navmesh;
 
-import org.firstinspires.ftc.teamcode.Team358.pathfinding.Mover;
-import org.firstinspires.ftc.teamcode.Team358.pathfinding.PathFindingContext;
-import org.firstinspires.ftc.teamcode.Team358.pathfinding.TileBasedMap;
+import org.firstinspires.ftc.teamcode.pathfinding.Mover;
+import org.firstinspires.ftc.teamcode.pathfinding.PathFindingContext;
+import org.firstinspires.ftc.teamcode.pathfinding.TileBasedMap;
 
 import java.util.ArrayList;
 

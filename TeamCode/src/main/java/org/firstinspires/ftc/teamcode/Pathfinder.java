@@ -1,31 +1,25 @@
 package org.firstinspires.ftc.teamcode;
 
-import org.firstinspires.ftc.teamcode.Team358.pathfinding.Path;
-import org.firstinspires.ftc.teamcode.Team358.pathfinding.PathFindingContext;
-import org.firstinspires.ftc.teamcode.Team358.pathfinding.TileBasedMap;
-import org.firstinspires.ftc.teamcode.Team358.pathfinding.AStarPathFinder;
-
 import java.util.ArrayList;
 import java.util.List;
+import org.firstinspires.ftc.teamcode.pathfinding.PathFindingContext;
+import org.firstinspires.ftc.teamcode.pathfinding.TileBasedMap;
+import org.firstinspires.ftc.teamcode.pathfinding.AStarPathFinder;
+import org.firstinspires.ftc.teamcode.pathfinding.Path;
 
 public class Pathfinder {
 
     private static final int MAX_PATH_LENGTH = 300;
 
-    private int START_X;
-    private int START_Y;
-
-    private int GOAL_X;
-    private int GOAL_Y;
-
     Pathfinder(int startX, int startY, int goalX, int goalY) {
-        START_X = startX + 38;
-        START_Y = 38 - startY;
-        GOAL_X = goalX + 38;
-        GOAL_Y = 38 - goalY;
     }
 
-    public List<RobotPosition> generateRobotPath() {
+    public List<RobotPosition> generateRobotPath(int startX, int startY, int goalX, int goalY) {
+
+        int START_X = startX + 38;
+        int START_Y = 38 - startY;
+        int GOAL_X = goalX + 38;
+        int GOAL_Y = 38 - goalY;
 
         SimpleMap map = new SimpleMap();
         AStarPathFinder pathFinder = new AStarPathFinder(map, MAX_PATH_LENGTH, true);
@@ -133,7 +127,7 @@ class SimpleMap implements TileBasedMap {
             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
     };
 
-    @Override
+//    @Override
     public boolean blocked(PathFindingContext ctx, int x, int y) {
         return MAP[y][x] != 0;
     }
@@ -142,7 +136,7 @@ class SimpleMap implements TileBasedMap {
         return MAP[y][x] != 0;
     }
 
-    @Override
+//    @Override
     public float getCost(PathFindingContext ctx, int x, int y) {
         return 1.0f;
     }

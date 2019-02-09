@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.Team358.pathfinding;
+package org.firstinspires.ftc.teamcode.pathfinding;
 
 /**
  * The description for the data we're pathfinding over. This provides the contract
