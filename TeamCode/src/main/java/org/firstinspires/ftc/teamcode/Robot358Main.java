@@ -81,7 +81,8 @@ public abstract class Robot358Main extends LinearOpMode {
         rangeL = hardwareMap.get(DistanceSensor.class, "rangeL");
         rangeR = hardwareMap.get(DistanceSensor.class, "rangeR");
         rangeF = hardwareMap.get(DistanceSensor.class, "rangeF");
-        rangeB = hardwareMap.get(DistanceSensor.class, "rangeB");
+        //TODO: add this back in
+//        rangeB = hardwareMap.get(DistanceSensor.class, "rangeB");
 
         _imu1 = hardwareMap.get(BNO055IMU.class, "imu");
         _imu1.initialize(parameters);

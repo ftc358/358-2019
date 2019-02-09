@@ -23,6 +23,7 @@ public class AutoC358_Blue extends AutoEngine358 {
             unlatch();
 
             int cubePosition = lookForwardAndCheck();
+            deactivateVuforia();
 
             telemetry.addData("cube position", cubePosition);
             telemetry.addData("current absolute heading", getAbsoluteCurrentHeading());

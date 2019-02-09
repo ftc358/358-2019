@@ -21,6 +21,7 @@ public class AutoD358_Red extends AutoEngine358 {
             unlatch();
 
             int cubePosition = lookForwardAndCheck();
+            deactivateVuforia();
 
             switch (cubePosition) {
                 case 1:
