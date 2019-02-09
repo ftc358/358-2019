@@ -4,6 +4,7 @@ import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 
 import org.firstinspires.ftc.robotcore.external.ClassFactory;
@@ -37,6 +38,10 @@ public abstract class Robot358Main extends LinearOpMode {
     protected Servo box;
     protected Servo token;
     protected BNO055IMU _imu1;
+    protected DistanceSensor rangeR;
+    protected DistanceSensor rangeL;
+    protected DistanceSensor rangeF;
+    protected DistanceSensor rangeB;
     VuforiaLocalizer vuforia;
     Orientation angles;
     float pitchAngle;
@@ -72,6 +77,11 @@ public abstract class Robot358Main extends LinearOpMode {
         parameters.accelUnit = BNO055IMU.AccelUnit.METERS_PERSEC_PERSEC;
         parameters.loggingEnabled = true;
         parameters.loggingTag = "IMU";
+
+        rangeL = hardwareMap.get(DistanceSensor.class, "rangeL");
+        rangeR = hardwareMap.get(DistanceSensor.class, "rangeR");
+        rangeF = hardwareMap.get(DistanceSensor.class, "rangeF");
+        rangeB = hardwareMap.get(DistanceSensor.class, "rangeB");
 
         _imu1 = hardwareMap.get(BNO055IMU.class, "imu");
         _imu1.initialize(parameters);
