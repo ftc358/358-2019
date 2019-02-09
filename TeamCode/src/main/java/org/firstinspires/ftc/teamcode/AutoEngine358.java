@@ -247,7 +247,7 @@ public abstract class AutoEngine358 extends Robot358Main {
             if (segmentsTraveled > numberOfSegmentsLast) {
                 currentPosition = collinearPositions.get(segmentsTraveled);
                 numberOfSegmentsLast = segmentsTraveled;
-                Log.d("Current Position updated inside forwardWithCheck", currentPosition.toString());
+//                Log.d("Current Position updated inside forwardWithCheck", currentPosition.toString());
             }
         }
 
@@ -297,7 +297,7 @@ public abstract class AutoEngine358 extends Robot358Main {
             if (segmentsTraveled > numberOfSegmentsLast) {
                 currentPosition = collinearPositions.get(segmentsTraveled);
                 numberOfSegmentsLast = segmentsTraveled;
-                Log.d("Current Position updated inside strafeWithCheck", currentPosition.toString());
+//                Log.d("Current Position updated inside strafeWithCheck", currentPosition.toString());
             }
         }
 
