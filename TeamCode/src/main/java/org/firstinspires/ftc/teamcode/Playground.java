@@ -10,7 +10,10 @@ public class Playground extends AutoEngine358 {
 
     @Override
     public void runOpMode() throws InterruptedException {
-        strafe(gamepad1.left_stick_y);
+        initialize();
+        while (opModeIsActive()) {
+            strafe(gamepad1.left_stick_y);
+        }
     }
 
     public void strafe(double power) {
