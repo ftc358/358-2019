@@ -11,7 +11,7 @@ import static java.lang.Math.sqrt;
 
 @TeleOp
 
-public class TeleOp358 extends Robot358Main {
+public class Diagnostics extends Robot358Main {
 
     boolean notDefaultBoxPosition = false;
     double SCALE = 1.5;
@@ -120,10 +120,17 @@ public class TeleOp358 extends Robot358Main {
                 }
             }
 
+            telemetry.addData("fL", fL.getCurrentPosition());
+            telemetry.addData("bL", bL.getCurrentPosition());
+            telemetry.addData("fR", fR.getCurrentPosition());
+            telemetry.addData("bR", bR.getCurrentPosition());
             telemetry.addData("lift", lift.getCurrentPosition());
             telemetry.addData("extend", extend.getCurrentPosition());
+            telemetry.addData("latch", latch.getCurrentPosition());
             telemetry.addData("intake", intake.getPower());
             telemetry.addData("box", box.getPosition());
+            telemetry.addData("token", token.getPosition());
+            telemetry.addData("IMU", getCurrentHeading());
 
             telemetry.addData("autoIntakeControl", autoIntakeControl);
             telemetry.update();
