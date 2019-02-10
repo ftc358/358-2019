@@ -9,7 +9,15 @@ public class Playground2 extends AutoEngine358 {
     @Override
     public void runOpMode() throws InterruptedException {
         initialize();
-        runMotor(lift,1,-1800);
-        runMotor(extend,1,2500);
+        resetAllDriveMotorEncoders();
+        strafe(1, 12.5);
+        while (opModeIsActive()) {
+            telemetry.addData("fL", fL.getCurrentPosition());
+            telemetry.addData("bL", bL.getCurrentPosition());
+            telemetry.addData("fR", fR.getCurrentPosition());
+            telemetry.addData("bR", bR.getCurrentPosition());
+            telemetry.update();
+        }
+        sleep(1000);
     }
 }
