@@ -21,6 +21,8 @@ component "TeleOp Programs"
 AutoEngine358 <-- Robot358Main
 AutoEngine358 -left[hidden]- Robot358Main
 "Autonomous Programs" <-- AutoEngine358
+PlayingFieldMap *-- Pathfinder
+PlayingFieldMap -down[hidden]- Pathfinder
 
 "TeleOp Programs" <-- Robot358Main
 "TeleOp Programs" -up[hidden]- Robot358Main

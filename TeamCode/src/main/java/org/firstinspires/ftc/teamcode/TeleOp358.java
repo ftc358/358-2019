@@ -121,6 +121,7 @@ public class TeleOp358 extends Robot358Main {
             }
 
             telemetry.addData("lift motor position", lift.getCurrentPosition());
+            telemetry.addData("extend motor position", extend.getCurrentPosition());
             telemetry.addData("autoIntakeControl", autoIntakeControl);
             telemetry.update();
         }

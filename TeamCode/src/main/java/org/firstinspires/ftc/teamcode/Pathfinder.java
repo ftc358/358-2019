@@ -14,7 +14,7 @@ public class Pathfinder {
     Pathfinder(int startX, int startY, int goalX, int goalY) {
     }
 
-    public List<RobotPosition> generateRobotPath(int startX, int startY, int goalX, int goalY) {
+    public List<RobotPosition> generatePath(int startX, int startY, int goalX, int goalY) {
 
         int START_X = startX + 38;
         int START_Y = 38 - startY;

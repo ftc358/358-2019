@@ -1,5 +1,7 @@
 package org.firstinspires.ftc.teamcode.pathfinding;
 
+import org.firstinspires.ftc.teamcode.pathfinding.heuristics.ClosestHeuristic;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;

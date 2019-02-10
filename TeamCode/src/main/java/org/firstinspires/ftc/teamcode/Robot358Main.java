@@ -78,9 +78,9 @@ public abstract class Robot358Main extends LinearOpMode {
         parameters.loggingEnabled = true;
         parameters.loggingTag = "IMU";
 
-        rangeL = hardwareMap.get(DistanceSensor.class, "rangeL");
-        rangeR = hardwareMap.get(DistanceSensor.class, "rangeR");
-        rangeF = hardwareMap.get(DistanceSensor.class, "rangeF");
+//        rangeL = hardwareMap.get(DistanceSensor.class, "rangeL");
+//        rangeR = hardwareMap.get(DistanceSensor.class, "rangeR");
+//        rangeF = hardwareMap.get(DistanceSensor.class, "rangeF");
         //TODO: add this back in
 //        rangeB = hardwareMap.get(DistanceSensor.class, "rangeB");
 
@@ -352,7 +352,7 @@ public abstract class Robot358Main extends LinearOpMode {
         VuforiaLocalizer.Parameters parameters = new VuforiaLocalizer.Parameters();
 
         parameters.vuforiaLicenseKey = VUFORIA_KEY;
-        parameters.cameraDirection = VuforiaLocalizer.CameraDirection.BACK;
+        parameters.cameraDirection = CAMERA_CHOICE;
 
         //  Instantiate the Vuforia engine
         vuforia = ClassFactory.getInstance().createVuforia(parameters);

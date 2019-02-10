@@ -2,42 +2,163 @@
 
 allowmixing
 
-abstract class Robot358Main
-abstract class AutoEngine358
-abstract class AutoEngine358
-abstract class RobotAction
-class RobotControl
-class ScoreAction
-class RobotPosition
-class Pathfinder
-class PlayingFieldMap
-class MoveAction
-class IMUTurner
+scale 2
+
+abstract class Robot358Main {
+    DcMotor fL
+    DcMotor bL
+    DcMotor fR
+    DcMotor bR
+    DcMotor lift
+    DcMotor latch
+    DcMotor extend
+    CRServo intake
+    Servo box
+    Servo token
+    BNO055IMU _imu1
+
+    DistanceSensor rangeR
+    DistanceSensor rangeL
+    DistanceSensor rangeF
+    DistanceSensor rangeB
+
+    VuforiaLocalizer vuforia
+    private TFObjectDetector tfod
+    String VUFORIA_KEY
+    VuforiaLocalizer.CameraDirection CAMERA_CHOICE
+    String TFOD_MODEL_ASSET
+    String LABEL_GOLD_MINERAL
+    String LABEL_SILVER_MINERAL
+
+    void initialize()
+
+    double getCurrentHeading()
+    void turn(TurnerIF turner, boolean runUsingEncoders, boolean stopMotors)
+    void forward(double power, double distance)
+    void strafe(double power, double distance)
+    void runMotor(DcMotor motor, double power, int ticks)
+
+    void resetAllDriveMotorEncoders()
+    void resetMotorEncoder()
+    void resetAllDriveMotorEncoders()
+    void runUsingEncoders()
+    void runWithoutEncoders()
+    void stopMotors()
+    void resetNonDriveMotorEncoders()
+    void runNonDriveUsingEncoders()
+    void runNonDriveWithoutEncoders()
+
+    int vuforiaMineralRecognition()
+    void initTfod()
+    void initVuforia()
+    void deactivateVuforia()
+}
+abstract class AutoEngine358 {
+    RobotPosition currentPosition
+    List<RobotPosition> robotPositionsWithHeadings
+    List<RobotAction> robotActions
+    List<MoveAction> robotMoveActions
+    double POWER = 1.0
+    Boolean RUN_USING_ENCODERS
+    RobotPosition STARTING_POSITION
+
+    void initialize(RobotPosition STARTING_POSITION)
+    void addRobotAction(RobotAction actionMethod)
+    void addAllMoveActions()
+    void runRobotActions()
+    void clearMoveActions()
+    void clearRobotActions()
+
+    void generateMoveActions(List<RobotPosition> positions, boolean optimize)
+    void optimizeContinuousSegments()
+
+    double getAbsoluteCurrentHeading()
+    void forwardWithCheck(double power, double distancePerSegment, int numberOfSegments, List<RobotPosition> collinearPositions)
+    void strafeWithCheck(double power, double distancePerSegment, int numberOfSegments, List<RobotPosition> collinearPositions)
+    void turnTo(double heading, double power)
+    double calculateTurn(double current, double target)
+    List<Integer> computeTurningPointIndices(List<RobotPosition> points)
+}
+abstract class RobotAction {
+    Boolean getRequireMultithreading()
+    Runnable getActionMethod()
+}
+class ScoreAction {
+    Boolean requireMultithreading
+    Runnable actionMethod
+
+    ScoreAction(Boolean requireMultithreading, Runnable actionMethod)
+}
+class RobotPosition {
+    Boolean isTurn
+    int x
+    int y
+    double heading
+
+    RobotPosition(int x, int y)
+    RobotPosition(int x, int y, double heading)
+    double getRelativeHeading()
+}
+class Pathfinder {
+    int startX
+    int startY
+    int goalX
+    int goalY
+    int MAX_PATH_LENGTH
+
+    Pathfinder(int startX, int startY, int goalX, int goalY)
+    List<RobotPosition> generatePath()
+}
+class PlayingFieldMap {
+    int WIDTH
+    int HEIGHT
+    int[][] MAP
+
+    boolean blocked(PathFindingContext ctx, int x, int y)
+    float getCost(PathFindingContext ctx, int x, int y)
+    void pathFinderVisited(int x, int y)
+}
+class MoveAction {
+    Boolean requireMultithreading
+    RobotPosition toPosition
+    Runnable actionMethod
+
+    MoveAction(RobotPosition toPosition, Runnable actionMethod)
+}
+class IMUTurner {
+    double _power
+    double _degrees
+    BNO055IMU _imu
+    double _initialHeading
+    double _maxError
+    double _slowDifference
+    double _rampDown
+    double _minFactor
+
+    start()
+    double getPower()
+    double getScaleFactor()
+    IMUTurner(double degrees, double power,
+    BNO055IMU imu, double maxError, StopperIF stopper)
+}
 
 component "pathfinding package"
 component "Autonomous Programs"
 component "TeleOp Programs"
 
-AutoEngine358 <-- Robot358Main
-AutoEngine358 -left[hidden]- Robot358Main
-"Autonomous Programs" <-- AutoEngine358
+AutoEngine358 <-- Robot358Main : inherits
+AutoEngine358 -left[hidden]- Robot358Main : inherits
+IMUTurner *-- Robot358Main 
+"Autonomous Programs" <-- AutoEngine358 : inherits
+PlayingFieldMap *-- Pathfinder 
 
-"TeleOp Programs" <-- Robot358Main
-"TeleOp Programs" -up[hidden]- Robot358Main
-IMUTurner *-- RobotControl
-IMUTurner -left[hidden]- RobotControl
-RobotControl *-- Robot358Main
-MoveAction -up[hidden]-  RobotAction
-ScoreAction -right[hidden]-  MoveAction
-Pathfinder -left[hidden]-  AutoEngine358
-RobotAction *-- AutoEngine358
-RobotAction -up[hidden]- AutoEngine358
-MoveAction <-- RobotAction
-ScoreAction <-- RobotAction
-RobotPosition *-- AutoEngine358
-RobotPosition -up[hidden]- AutoEngine358
+"TeleOp Programs" <-- Robot358Main : inherits
+RobotAction *-- AutoEngine358 
+MoveAction <-- RobotAction : inherits
+ScoreAction <-- RobotAction : inherits
+RobotPosition *-- AutoEngine358 
 
-Pathfinder *-- AutoEngine358
+Pathfinder *-- AutoEngine358 
 Pathfinder <-- "pathfinding package"
 
 
