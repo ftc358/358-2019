@@ -88,7 +88,7 @@ public class AutoC358_Blue extends AutoEngine358 {
                     break;
             }
             runMotor(lift, 1, -1800);
-            runMotor(extend, 1, 2500);
+            runMotor(extend, 1, 1000);
             done = true;
         }
     }
@@ -100,9 +100,9 @@ public class AutoC358_Blue extends AutoEngine358 {
     public void unlatch() throws InterruptedException {
         runMotor(latch, 1, -10400);
         forward(1, 2);
-        strafe(1, 12.5);
+        strafe(1, 6);
+        forward(1, -5);
         turnTo(45, POWER);
-        forward(1, -5.5);
         done = true;
     }
 }

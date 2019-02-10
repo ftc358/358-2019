@@ -57,7 +57,9 @@ public class AutoD358_Red extends AutoEngine358 {
                     forward(POWER, -32);
                     dropToken();
                     turnTo(270, POWER);
-                    forward(POWER, 74);
+                    forward(POWER, 37);
+                    turnTo(270, POWER);
+                    forward(POWER, 37);
                     break;
                 case 2:
                     turnTo(45, POWER);
@@ -68,12 +70,14 @@ public class AutoD358_Red extends AutoEngine358 {
                     break;
                 case 3:
                     turnTo(90, POWER);
-                    forward(POWER, 42);
-                    turnTo(180, POWER);
-                    forward(POWER, -32);
-                    turnTo(180, POWER);
+                    forward(POWER, 30);
+                    turnTo(0, POWER);
+                    forward(POWER, 36);
+                    turnTo(270, POWER);
                     dropToken();
-                    forward(POWER, 74);
+                    forward(POWER, 37);
+                    turnTo(270, POWER);
+                    forward(POWER, 37);
                     break;
             }
             runMotor(lift, 1, -1800);

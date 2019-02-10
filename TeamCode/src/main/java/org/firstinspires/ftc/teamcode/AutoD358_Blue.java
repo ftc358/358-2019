@@ -75,7 +75,7 @@ public class AutoD358_Blue extends AutoEngine358 {
                     break;
             }
             runMotor(lift, 1, -1800);
-            runMotor(extend, 1, 2500);
+            runMotor(extend, 1, 1000);
             done = true;
         }
     }
@@ -88,8 +88,8 @@ public class AutoD358_Blue extends AutoEngine358 {
         runMotor(latch, 1, -10400);
         forward(1, 2);
         strafe(1, 12.5);
-        turnTo(315, POWER);
         forward(1, -5.5);
+        turnTo(315, POWER);
         done = true;
     }
 }
