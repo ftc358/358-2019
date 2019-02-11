@@ -53,35 +53,36 @@ public class AutoD358_Red extends AutoEngine358 {
                 case 1:
                     turnTo(0, POWER);
                     forward(POWER, 42);
-                    turnTo(270, POWER);
-                    forward(POWER, -32);
+                    turnTo(90, POWER);
+                    forward(POWER, 30);
+                    turnTo(135, POWER);
+                    forward(POWER, 5 * 2 * sqrt(2));
                     dropToken();
-                    turnTo(270, POWER);
-                    forward(POWER, 37);
-                    turnTo(270, POWER);
-                    forward(POWER, 37);
+                    forward(POWER, 1 * 2 * sqrt(2));
+                    turnTo(180, POWER);
+                    forward(POWER, 76);
                     break;
                 case 2:
                     turnTo(45, POWER);
-                    forward(POWER, 21 * 2 * sqrt(2));
-                    turnTo(270, POWER);
+                    forward(POWER, 18 * 2 * sqrt(2));
+                    turnTo(135, POWER);
+                    forward(POWER, 4 * 2 * sqrt(2));
                     dropToken();
-                    forward(POWER, 84);
+                    turnTo(180, POWER);
+                    forward(POWER, 78);
                     break;
                 case 3:
                     turnTo(90, POWER);
-                    forward(POWER, 30);
-                    turnTo(0, POWER);
-                    forward(POWER, 36);
-                    turnTo(270, POWER);
+                    forward(POWER, 42);
+                    turnTo(180, POWER);
+                    forward(POWER, -32);
+                    turnTo(180, POWER);
                     dropToken();
-                    forward(POWER, 37);
-                    turnTo(270, POWER);
-                    forward(POWER, 37);
+                    forward(POWER, 74);
                     break;
             }
             runMotor(lift, 1, -1800);
-            runMotor(extend, 1, 2500);
+            runMotor(extend, 1, 1000);
             done = true;
         }
     }
@@ -94,8 +95,8 @@ public class AutoD358_Red extends AutoEngine358 {
         runMotor(latch, 1, -10400);
         forward(1, 2);
         strafe(1, 12.5);
-        turnTo(135, POWER);
         forward(1, -5.5);
+        turnTo(135, POWER);
         done = true;
     }
 }

@@ -40,29 +40,36 @@ public class AutoD358_Blue extends AutoEngine358 {
                 cubePosition = 1;
                 didTimeOut = true;
             }
+
             deactivateVuforia();
 
             telemetry.addData("cube position", cubePosition);
             telemetry.addData("did time out:", didTimeOut);
             telemetry.addData("current absolute heading", getAbsoluteCurrentHeading());
             telemetry.update();
+            deactivateVuforia();
 
             switch (cubePosition) {
                 case 1:
                     turnTo(180, POWER);
                     forward(POWER, 42);
-                    turnTo(90, POWER);
-                    forward(POWER, -32);
+                    turnTo(270, POWER);
+                    forward(POWER, 30);
+                    turnTo(315, POWER);
+                    forward(POWER, 5 * 2 * sqrt(2));
                     dropToken();
-                    turnTo(90, POWER);
-                    forward(POWER, 74);
+                    forward(POWER, 1 * 2 * sqrt(2));
+                    turnTo(0, POWER);
+                    forward(POWER, 76);
                     break;
                 case 2:
                     turnTo(225, POWER);
-                    forward(POWER, 21 * 2 * sqrt(2));
-                    turnTo(90, POWER);
+                    forward(POWER, 18 * 2 * sqrt(2));
+                    turnTo(315, POWER);
+                    forward(POWER, 4 * 2 * sqrt(2));
                     dropToken();
-                    forward(POWER, 84);
+                    turnTo(0, POWER);
+                    forward(POWER, 78);
                     break;
                 case 3:
                     turnTo(270, POWER);

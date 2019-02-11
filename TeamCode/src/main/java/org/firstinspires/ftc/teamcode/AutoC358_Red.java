@@ -99,7 +99,7 @@ public class AutoC358_Red extends AutoEngine358 {
     public void unlatch() throws InterruptedException {
         runMotor(latch, 1, -10400);
         forward(1, 2);
-        strafe(1, 6);
+        strafe(1, 8);
         forward(1, -5);
         turnTo(225, POWER);
         done = true;
