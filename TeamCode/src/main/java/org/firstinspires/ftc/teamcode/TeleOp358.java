@@ -92,7 +92,6 @@ public class TeleOp358 extends Robot358Main {
             }
 
             //intake
-
             if (gamepad2.y) {
                 baseArmPosition = lift.getCurrentPosition();
                 autoIntakeControl = true;
