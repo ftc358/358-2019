@@ -1,0 +1,4 @@
+#Wed Aug 28 16:17:11 PDT 2019
+base.0=/Users/calvinx/Projects/358-2019/TeamCode/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

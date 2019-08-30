@@ -10,23 +10,22 @@ import com.qualcomm.robotcore.hardware.Servo;
 @TeleOp
 public class CeciliaTestTeleOp extends LinearOpMode {
 
-    DcMotor motor;
-    Servo servo;
-    CRServo continuousServo;
+    DcMotor motor1;
+    DcMotor motor2;
 
     public void runOpMode() throws InterruptedException {
 
         waitForStart();
 
-        int currentPower = 0;
-
         while (opModeIsActive()) {
 
             //motor
 
-            motor = hardwareMap.dcMotor.get("latch");
+            motor1 = hardwareMap.dcMotor.get("1");
+            motor2 = hardwareMap.dcMotor.get("2");
 
-            motor.setPower(gamepad1.left_stick_y);
+            motor1.setPower(gamepad1.left_stick_y);
+            motor2.setPower(gamepad1.left_stick_y);
 
             //servo
 

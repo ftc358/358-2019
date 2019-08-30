@@ -14,7 +14,7 @@ import static java.lang.Math.sqrt;
 public class TeleOp358 extends Robot358Main {
 
     boolean notDefaultBoxPosition = false;
-    double SCALE = 1.5;
+    double SCALE = 1;
 
     Integer baseArmPosition;
 
@@ -42,8 +42,8 @@ public class TeleOp358 extends Robot358Main {
 
             //Drive code :) //////////////////////////////////////////////////////////////////////////////////////
             //Defining drive, strafe, and rotation power.                                                       //
-            double drive = gamepad1.left_stick_y;                                                               //
-            double strafe = gamepad1.left_stick_x;                                                              //
+            double drive = -gamepad1.left_stick_y;                                                               //
+            double strafe = -gamepad1.left_stick_x;                                                              //
             double rotate = gamepad1.right_stick_x;                                                             //
             //
             //Defining the motor power distribution.                                                            //

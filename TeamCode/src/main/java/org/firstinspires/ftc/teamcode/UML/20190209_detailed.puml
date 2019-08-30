@@ -142,20 +142,44 @@ class IMUTurner {
     BNO055IMU imu, double maxError, StopperIF stopper)
 }
 
+class TurnerIF {
+    double getPower();
+    double getScaleFactor();
+}
+
+class StopperIF {
+    void start();
+    boolean keepGoing(int position);
+    void finish();
+}
+
+class DefaultStopper {
+    StopperIF _stopper
+    public void start()
+    public boolean keepGoing(int position)
+    public void finish()
+}
+
 component "pathfinding package"
 component "Autonomous Programs"
 component "TeleOp Programs"
 
-AutoEngine358 <-- Robot358Main : inherits
-AutoEngine358 -left[hidden]- Robot358Main : inherits
+AutoEngine358 <-- Robot358Main
+AutoEngine358 -left[hidden]- Robot358Main
 IMUTurner *-- Robot358Main 
-"Autonomous Programs" <-- AutoEngine358 : inherits
-PlayingFieldMap *-- Pathfinder 
+"Autonomous Programs" <-- AutoEngine358
+PlayingFieldMap *-- Pathfinder
 
-"TeleOp Programs" <-- Robot358Main : inherits
+IMUTurner <-- DefaultStopper
+IMUTurner -up[hidden]- DefaultStopper
+DefaultStopper <-- StopperIF
+IMUTurner <-- TurnerIF
+IMUTurner -up[hidden]- TurnerIF
+
+"TeleOp Programs" <-- Robot358Main
 RobotAction *-- AutoEngine358 
-MoveAction <-- RobotAction : inherits
-ScoreAction <-- RobotAction : inherits
+MoveAction <-- RobotAction
+ScoreAction <-- RobotAction
 RobotPosition *-- AutoEngine358 
 
 Pathfinder *-- AutoEngine358 
